@@ -1,0 +1,39 @@
+<style>
+  body{
+    background-color: aliceblue;
+  }
+  .container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 7rem;
+  }
+</style>
+<div class="container" 
+  style=>
+  {{#each orders}}
+<div class="card mb-3" style="max-width: 540px;">
+  <a href="/viewOrderProducts/{{this._id}}" style="text-decoration:none; color:black">
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="https://d2kh7o38xye1vj.cloudfront.net/wp-content/uploads/2019/09/tracking-icon.png" height="" class="card-img mt-5 pt-5" alt="...">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{this.deliveryDetails.name}}</h5>
+        <p class="card-text"><strong>Address:</strong>{{this.deliveryDetails.address}}</p>
+        <p class="card-text"><strong>Phone:</strong>{{this.deliveryDetails.phone}}</p>
+        <p class="card-text"><strong>Pin:</strong>{{this.deliveryDetails.pin}}</p>
+        <p class="card-text"><strong>Amount</strong>₹. {{this.amount}}</p>
+        <p class="card-tect">Payment :<span style="color: green;">{{this.payment_status}}</span></p>
+        <p class="card-tect">Delivery :<span style="color: red;">{{this.shipment_status}}</span></p>
+        <p class="card-text"><small class="text-muted">ordered date:{{this.date}}</small></p>
+        <p class="card-text"><small class="text-muted">estimated delivery date:{{this.estimated_delivery}}</small></p>
+      </div>
+    </div>
+  </div>
+  </a>
+</div>
+{{/each}}
+</div>

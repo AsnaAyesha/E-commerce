@@ -1,0 +1,45 @@
+<link rel="stylesheet" href="//cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+<div class="container-fluid">
+     <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+            <h1 class="h2">Categories</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-group mr-2">
+          <a href="/admin/addCategory"><button class="btn btn-sm btn-outline-secondary">Add Category</button></a>
+        </div>
+      </div>
+          </div>
+
+          <div class="table-responsive">
+            <table class="table table-bordered table-xs" id="myTable">
+              <thead>
+                <tr>
+                  
+                  <th>Categories</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each category}}
+                <tr>
+                  
+                  <td>{{this.category}}</td>
+                  <td><a href="/admin/editCategory/{{this._id}}"><button class="btn btn-dark">Edit</button></a></td>
+                  <td><a href="/admin/deleteCategory/{{this.category}}"><button onclick="return confirm('this will delete all products in this category')" class="btn btn-danger">Delete</button></a></th>
+                </tr>
+                {{/each}}
+                
+              </tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+
+
+<!-- Icons -->
+    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
+    <script>
+      feather.replace()
+    </script>
+      
